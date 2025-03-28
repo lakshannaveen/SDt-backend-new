@@ -55,6 +55,34 @@ namespace sdt_backend.net.Controllers
             }
         }
 
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] AdminLoginDto adminDto)
+        {
+            try
+            {
+                // Check if the admin exists
+                var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Username.ToLower() == adminDto.Username.ToLower());
+                if (admin == null)
+                {
+                    return Unauthorized(new { message = "Invalid username or password." });
+                }
+
+                // Validate the password
+                var hashedPassword = HashPassword(adminDto.Password);
+                if (admin.PasswordHash != hashedPassword)
+                {
+                    return Unauthorized(new { message = "Invalid username or password." });
+                }
+
+                return Ok(new { message = "Login successful!" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
+            }
+        }
+
         private string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
@@ -66,6 +94,12 @@ namespace sdt_backend.net.Controllers
     }
 
     public class AdminRegisterDto
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+
+    public class AdminLoginDto
     {
         public string Username { get; set; }
         public string Password { get; set; }
