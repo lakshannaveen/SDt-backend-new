@@ -7,6 +7,7 @@ namespace sdt_backend.net.Models
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Admin> Admins { get; set; } // Admins table
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,7 +18,7 @@ namespace sdt_backend.net.Models
                 entity.ToTable("users");
 
                 entity.Property(u => u.Name)
-                    .HasMaxLength(100)  // Adjusted to a more reasonable length
+                    .HasMaxLength(100)
                     .IsRequired()
                     .HasColumnType("VARCHAR(100)");
 
@@ -30,9 +31,30 @@ namespace sdt_backend.net.Models
                     .IsRequired()
                     .HasColumnType("TEXT");
 
-                // Removed CreatedAt field since it's no longer needed
-
                 entity.HasIndex(u => u.Email).IsUnique();
+            });
+
+            // Define the Admin entity with explicit column mappings
+            modelBuilder.Entity<Admin>(entity =>
+            {
+                entity.ToTable("admins");
+
+                entity.Property(a => a.Id)
+                    .HasColumnName("id") // Map to lowercase column name
+                    .IsRequired();
+
+                entity.Property(a => a.Username)
+                    .HasColumnName("username") // Map to lowercase column name
+                    .HasMaxLength(50)
+                    .IsRequired()
+                    .HasColumnType("VARCHAR(50)");
+
+                entity.Property(a => a.PasswordHash)
+                    .HasColumnName("password_hash") // Map to lowercase column name
+                    .IsRequired()
+                    .HasColumnType("TEXT");
+
+                entity.HasIndex(a => a.Username).IsUnique();
             });
         }
     }
