@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace sdt_backend.net.Models
 {
-    [Table("users")]  // Explicitly map to "users" table
+    [Table("users")] // Explicitly map to "users" table
     public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("id")]  // Ensure the column name matches PostgreSQL
+        [Column("id")] // Ensure the column name matches the database
         public int Id { get; set; }
 
         [Required]

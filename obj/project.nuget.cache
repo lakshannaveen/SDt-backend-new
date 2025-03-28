@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wY22+GRF/npNsU3b4UxOybUHqRKYktag3bEuh2huB9wR2pRVqM3KlzPANXC2XUUO8VoFIy1EO27g3Bm5QNx3AA==",
+  "dgSpecHash": "h0+ik/6UMb5WlkKLVnSlpuIAW7lY7WQ0WsSSCCR4arTv5YqJwSWhDJE6iow46WcPz++IHHCgrqI7BtnIahKyng==",
   "success": true,
-  "projectFilePath": "F:\\sdt backend net\\sdt-backend.net\\sdt-backend.net\\sdt-backend.net.csproj",
+  "projectFilePath": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\sdt-backend.net.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\techn\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\techn\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BCrypt.Net;
-using sdt_backend.net.Models;  // Correct reference to the Models namespace
-using System.Threading.Tasks;
+using sdt_backend.net.Models;
 
 namespace sdt_backend.net.Controllers
 {
@@ -16,8 +15,31 @@ namespace sdt_backend.net.Controllers
         {
             _context = context;
         }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequest)
+        {
+            if (loginRequest == null || string.IsNullOrEmpty(loginRequest.Name) || string.IsNullOrEmpty(loginRequest.Password))
+            {
+                return BadRequest(new { message = "Invalid login data." });
+            }
 
-        // POST: api/user/register
+            // Check if the user exists in the database by name
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Name == loginRequest.Name);
+            if (user == null)
+            {
+                return Unauthorized(new { message = "Invalid username or password." });
+            }
+
+            // Verify the password
+            if (!BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password))
+            {
+                return Unauthorized(new { message = "Invalid username or password." });
+            }
+
+            return Ok(new { message = "Login successful!" });
+        }
+
+        // POST: api/user/register (for reference)
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User user)
         {
@@ -27,12 +49,10 @@ namespace sdt_backend.net.Controllers
             }
 
             // Check if the email already exists in the database
-            var existingUser = await _context.Users
-                .FirstOrDefaultAsync(u => u.Email == user.Email);
-
+            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
             if (existingUser != null)
             {
-                return BadRequest("Email already exists.");
+                return BadRequest(new { message = "Email already exists." });
             }
 
             // Hash the password before saving it
@@ -42,24 +62,19 @@ namespace sdt_backend.net.Controllers
             }
             else
             {
-                return BadRequest("Password cannot be empty.");
+                return BadRequest(new { message = "Password cannot be empty." });
             }
 
             try
             {
-                // Save the user to the database
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
 
                 return Ok(new { message = "Registration successful!" });
             }
-            catch (DbUpdateException dbEx)
-            {
-                return StatusCode(500, new { message = "An error occurred while saving user data.", details = dbEx.Message });
-            }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+                return StatusCode(500, new { message = "An error occurred.", details = ex.Message });
             }
         }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\sdt backend net\\sdt-backend.net\\sdt-backend.net\\sdt-backend.net.csproj": {}
+    "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\sdt-backend.net.csproj": {}
   },
   "projects": {
-    "F:\\sdt backend net\\sdt-backend.net\\sdt-backend.net\\sdt-backend.net.csproj": {
+    "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\sdt-backend.net.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\sdt backend net\\sdt-backend.net\\sdt-backend.net\\sdt-backend.net.csproj",
+        "projectUniqueName": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\sdt-backend.net.csproj",
         "projectName": "sdt-backend.net",
-        "projectPath": "F:\\sdt backend net\\sdt-backend.net\\sdt-backend.net\\sdt-backend.net.csproj",
+        "projectPath": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\sdt-backend.net.csproj",
         "packagesPath": "C:\\Users\\techn\\.nuget\\packages\\",
-        "outputPath": "F:\\sdt backend net\\sdt-backend.net\\sdt-backend.net\\obj\\",
+        "outputPath": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\techn\\AppData\\Roaming\\NuGet\\NuGet.Config",
