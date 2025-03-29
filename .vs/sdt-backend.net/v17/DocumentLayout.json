@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Controllers\\AirQualityController.cs",
               "ToolTip": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\AirQualityController.cs",
               "RelativeToolTip": "Controllers\\AirQualityController.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAAAEcAAAAFAAAA",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAuwHcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-29T03:06:39.78Z",
               "EditorCaption": ""
@@ -87,8 +87,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-28T15:15:24.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T15:15:24.526Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "AppDbContext.cs",
               "ViewState": "AQIAACwAAAAAAAAAAAAAADwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T14:31:10.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T14:31:10.827Z"
             },
             {
               "$type": "Document",
