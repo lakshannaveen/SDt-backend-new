@@ -55,6 +55,28 @@ namespace sdt_backend.net.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
             }
         }
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            try
+            {
+                var user = await _context.Users.FindAsync(id);
+                if (user == null)
+                {
+                    return NotFound(new { message = "User not found." });
+                }
+
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "User deleted successfully!" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, new { message = "An error occurred while deleting the user." });
+            }
+        }
         // POST: api/user/register (for reference)
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User user)

@@ -71,6 +71,28 @@ namespace sdt_backend.net.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
             }
         }
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteAdmin(int id)
+        {
+            try
+            {
+                var admin = await _context.Admins.FindAsync(id);
+                if (admin == null)
+                {
+                    return NotFound(new { message = "Admin not found." });
+                }
+
+                _context.Admins.Remove(admin);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "Admin deleted successfully!" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, new { message = "An error occurred while deleting the admin." });
+            }
+        }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] AdminLoginDto adminDto)
