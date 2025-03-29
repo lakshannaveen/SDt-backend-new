@@ -14,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddLogging();
+builder.Services.AddHttpClient();  // ✅ Add HttpClient for API calls
 
 // ✅ Add CORS policy
 builder.Services.AddCors(options =>
@@ -51,7 +52,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
 // ✅ Apply CORS policy before Authorization
