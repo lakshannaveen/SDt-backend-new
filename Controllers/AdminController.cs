@@ -54,6 +54,23 @@ namespace sdt_backend.net.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
             }
         }
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllAdmins()
+        {
+            try
+            {
+                var admins = await _context.Admins
+                    .Select(a => new { a.Id, a.Username })
+                    .ToListAsync();
+
+                return Ok(admins);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
+            }
+        }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] AdminLoginDto adminDto)
