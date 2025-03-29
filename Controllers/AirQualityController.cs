@@ -26,24 +26,48 @@ public class AirQualityController : ControllerBase
     {
         try
         {
-            string apiKey = _configuration["WAQI:ApiKey"];  // Get only the API key
-            string city = "Colombo";  // You can make this dynamic if needed
+            string apiKey = _configuration["WAQI:ApiKey"];
 
-            // ✅ Correct API URL format
-            string apiUrl = $"https://api.waqi.info/feed/{city}/?token={apiKey}";
+            // List of station IDs in Colombo district
+            var colomboStations = new Dictionary<string, string>
+        {
+            {"Colombo US Embassy", "@1456"},
+            {"Colombo Fort", "@1457"},
+            // Add more stations as needed
+        };
 
-            _logger.LogInformation("Fetching air quality data from {url}", apiUrl);
+            var stationData = new List<object>();
 
-            // ✅ Fetch Data
-            var response = await _httpClient.GetStringAsync(apiUrl);
-            var airQualityData = JsonSerializer.Deserialize<object>(response); // Adjust DTO if needed
+            foreach (var station in colomboStations)
+            {
+                string apiUrl = $"https://api.waqi.info/feed/{station.Value}/?token={apiKey}";
 
-            return Ok(airQualityData);
+                var response = await _httpClient.GetAsync(apiUrl);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                // Deserialize and add to our list
+                var result = JsonSerializer.Deserialize<JsonElement>(responseContent);
+
+                if (result.TryGetProperty("data", out var data))
+                {
+                    stationData.Add(new
+                    {
+                        location = station.Key,
+                        data = data
+                    });
+                }
+            }
+
+            return Ok(new
+            {
+                status = "ok",
+                stations = stationData
+            });
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error fetching air quality data");
-            return StatusCode(500, $"Error fetching data: {ex.Message}");
+            return StatusCode(500, new { status = "error", message = ex.Message });
         }
     }
 

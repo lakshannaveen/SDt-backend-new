@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sdt-backend.net")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+924204a1d082589e68e0d252c666d3ec50d37c5c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88a343a47798987e5d06d6dca741bcbb2f326c5e")]
 [assembly: System.Reflection.AssemblyProductAttribute("sdt-backend.net")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sdt-backend.net")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
