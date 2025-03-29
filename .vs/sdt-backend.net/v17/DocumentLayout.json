@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{45A6DC1A-AA2A-40F8-A420-916098E163E3}|sdt-backend.net.csproj|c:\\users\\techn\\onedrive\\documents\\voice frontend test\\github cone\\sdt-backend-new\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A6DC1A-AA2A-40F8-A420-916098E163E3}|sdt-backend.net.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{45A6DC1A-AA2A-40F8-A420-916098E163E3}|sdt-backend.net.csproj|c:\\users\\techn\\onedrive\\documents\\voice frontend test\\github cone\\sdt-backend-new\\controllers\\airqualitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45A6DC1A-AA2A-40F8-A420-916098E163E3}|sdt-backend.net.csproj|solutionrelative:controllers\\airqualitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -50,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Controllers\\DashboardController.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAAAHUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T09:44:40.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -66,20 +83,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AirQualityController.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\AirQualityController.cs",
               "RelativeDocumentMoniker": "Controllers\\AirQualityController.cs",
               "ToolTip": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\AirQualityController.cs",
               "RelativeToolTip": "Controllers\\AirQualityController.cs",
-              "ViewState": "AQIAAGcAAAAAAAAAAAAuwHcAAAABAAAA",
+              "ViewState": "AQIAAGcAAAAAAAAAAAA+wHcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-29T03:06:39.78Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\AppDbContext.cs",
               "RelativeDocumentMoniker": "AppDbContext.cs",
@@ -103,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -115,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Admin.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "Models\\Admin.cs",
@@ -127,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "LoginRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Models\\LoginRequestDto.cs",
               "RelativeDocumentMoniker": "Models\\LoginRequestDto.cs",
@@ -139,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -151,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -163,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
