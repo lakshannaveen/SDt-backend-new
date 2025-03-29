@@ -38,7 +38,23 @@ namespace sdt_backend.net.Controllers
 
             return Ok(new { message = "Login successful!" });
         }
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var users = await _context.Users
+                    .Select(u => new { u.Id, u.Name, u.Email })
+                    .ToListAsync();
 
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
+            }
+        }
         // POST: api/user/register (for reference)
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User user)
