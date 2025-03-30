@@ -8,6 +8,7 @@ namespace sdt_backend.net.Models
 
         public DbSet<User> Users { get; set; }
         public DbSet<Admin> Admins { get; set; } // Admins table
+        public DbSet<Station> AirQualityStations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,7 +34,33 @@ namespace sdt_backend.net.Models
 
                 entity.HasIndex(u => u.Email).IsUnique();
             });
+            modelBuilder.Entity<Station>(entity =>
+            {
+                entity.ToTable("air_quality_stations");
 
+                entity.Property(s => s.StationName)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasColumnType("VARCHAR(100)");
+
+                entity.Property(s => s.Latitude)
+                    .HasColumnType("DECIMAL(10, 6)");
+
+                entity.Property(s => s.Longitude)
+                    .HasColumnType("DECIMAL(10, 6)");
+
+                entity.Property(s => s.PM25)
+                    .HasColumnType("DECIMAL(5, 1)");
+
+                entity.Property(s => s.CO)
+                    .HasColumnType("DECIMAL(5, 1)");
+
+                entity.Property(s => s.Temperature)
+                    .HasColumnType("DECIMAL(4, 1)");
+
+                entity.Property(s => s.Humidity)
+                    .HasColumnType("DECIMAL(5, 1)");
+            });
             // Define the Admin entity with explicit column mappings
             modelBuilder.Entity<Admin>(entity =>
             {
