@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Controllers\\StationDataController.cs",
               "ToolTip": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Controllers\\StationDataController.cs",
               "RelativeToolTip": "Controllers\\StationDataController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAAAFoAAAABAAAA",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAywGsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T05:39:33.884Z",
               "EditorCaption": ""
@@ -85,7 +85,7 @@
               "RelativeDocumentMoniker": "Models\\Station.cs",
               "ToolTip": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\Models\\Station.cs",
               "RelativeToolTip": "Models\\Station.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAAAEQAAAABAAAA",
+              "ViewState": "AQIAAA8AAAAA3LZtZSUowDMAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T05:38:38.271Z",
               "EditorCaption": ""
@@ -100,8 +100,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAMAAADwtm3/mSkpwAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-28T15:15:24.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T15:15:24.526Z"
             },
             {
               "$type": "Document",
@@ -113,8 +112,7 @@
               "RelativeToolTip": "AppDbContext.cs",
               "ViewState": "AQIAAC8AAAAAAAAAAAAAAFcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T14:31:10.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T14:31:10.827Z"
             },
             {
               "$type": "Document",
@@ -138,8 +136,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAAAAEIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T03:07:13.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T03:07:13.636Z"
             },
             {
               "$type": "Document",
@@ -175,8 +172,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AQIAAD4AAAAAAAAAAAAAAE4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T13:05:58.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T13:05:58.241Z"
             },
             {
               "$type": "Document",

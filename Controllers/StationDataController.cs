@@ -17,7 +17,24 @@ namespace sdt_backend.net.Controllers
             _context = context;
             _logger = logger;
         }
+        [HttpGet("historical")]
+        public IActionResult GetHistoricalData()
+        {
+            try
+            {
+                var historicalData = _context.AirQualityStations
+                    .OrderByDescending(s => s.Timestamp)
+                    .Take(1000) // Limit to 1000 records
+                    .ToList();
 
+                return Ok(historicalData);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving historical data");
+                return StatusCode(500, "Error retrieving historical data");
+            }
+        }
         [HttpPost("add")]
         public async Task<IActionResult> AddStationData([FromBody] StationDataDto stationDataDto)
         {
