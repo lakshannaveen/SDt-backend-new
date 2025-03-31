@@ -16,51 +16,51 @@ namespace sdt_backend.net.Controllers
 
         public ManageStationDataController(AppDbContext context)
         {
-            _context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         // GET: api/ManageStationData
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Station>>> GetStations()
         {
-            return await _context.AirQualityStations.ToListAsync();
+            return await _context.AirQualityStations
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         // GET: api/ManageStationData/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<Station>> GetStation(int id)
         {
-            var station = await _context.AirQualityStations.FindAsync(id);
+            var station = await _context.AirQualityStations
+                .AsNoTracking()
+                .FirstOrDefaultAsync(s => s.Id == id);
 
-            if (station == null)
-            {
-                return NotFound();
-            }
-
-            return station;
+            return station == null ? NotFound() : station;
         }
 
         // POST: api/ManageStationData
         [HttpPost]
         public async Task<ActionResult<Station>> PostStation(Station station)
         {
-            station.Timestamp = DateTime.UtcNow;
-            station.CreatedAt = DateTime.UtcNow;
-            station.UpdatedAt = DateTime.UtcNow;
+            var now = DateTime.UtcNow;
+            station.Timestamp = now;
+            station.CreatedAt = now;
+            station.UpdatedAt = now;
 
             _context.AirQualityStations.Add(station);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStation", new { id = station.Id }, station);
+            return CreatedAtAction(nameof(GetStation), new { id = station.Id }, station);
         }
 
         // PUT: api/ManageStationData/5
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> PutStation(int id, Station station)
         {
             if (id != station.Id)
             {
-                return BadRequest();
+                return BadRequest("ID mismatch");
             }
 
             station.UpdatedAt = DateTime.UtcNow;
@@ -70,23 +70,16 @@ namespace sdt_backend.net.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException) when (!StationExists(id))
             {
-                if (!StationExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
         }
 
         // DELETE: api/ManageStationData/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteStation(int id)
         {
             var station = await _context.AirQualityStations.FindAsync(id);

@@ -2977,19 +2977,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\techn\\.nuget\\packages\\": {}
+    "C:\\Users\\RG Dunira\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\sdt-backend.net.csproj",
+      "projectUniqueName": "D:\\MAD\\SDt-backend-new\\sdt-backend.net.csproj",
       "projectName": "sdt-backend.net",
-      "projectPath": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\sdt-backend.net.csproj",
-      "packagesPath": "C:\\Users\\techn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\techn\\OneDrive\\Documents\\voice frontend test\\github cone\\SDt-backend-new\\obj\\",
+      "projectPath": "D:\\MAD\\SDt-backend-new\\sdt-backend.net.csproj",
+      "packagesPath": "C:\\Users\\RG Dunira\\.nuget\\packages\\",
+      "outputPath": "D:\\MAD\\SDt-backend-new\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\techn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RG Dunira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3014,7 +3019,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -3054,7 +3060,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
