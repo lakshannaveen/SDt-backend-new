@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using sdt_backend.net.Models;
 
 namespace sdt_backend.net.Models
 {
@@ -7,8 +8,9 @@ namespace sdt_backend.net.Models
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Admin> Admins { get; set; } // Admins table
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<Station> AirQualityStations { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +36,7 @@ namespace sdt_backend.net.Models
 
                 entity.HasIndex(u => u.Email).IsUnique();
             });
+
             modelBuilder.Entity<Station>(entity =>
             {
                 entity.ToTable("air_quality_stations");
@@ -61,27 +64,55 @@ namespace sdt_backend.net.Models
                 entity.Property(s => s.Humidity)
                     .HasColumnType("DECIMAL(5, 1)");
             });
-            // Define the Admin entity with explicit column mappings
+
             modelBuilder.Entity<Admin>(entity =>
             {
                 entity.ToTable("admins");
 
                 entity.Property(a => a.Id)
-                    .HasColumnName("id") // Map to lowercase column name
+                    .HasColumnName("id")
                     .IsRequired();
 
                 entity.Property(a => a.Username)
-                    .HasColumnName("username") // Map to lowercase column name
+                    .HasColumnName("username")
                     .HasMaxLength(50)
                     .IsRequired()
                     .HasColumnType("VARCHAR(50)");
 
                 entity.Property(a => a.PasswordHash)
-                    .HasColumnName("password_hash") // Map to lowercase column name
+                    .HasColumnName("password_hash")
                     .IsRequired()
                     .HasColumnType("TEXT");
 
                 entity.HasIndex(a => a.Username).IsUnique();
+            });
+
+            modelBuilder.Entity<Contact>(entity =>
+            {
+                entity.ToTable("contacts");
+
+                entity.Property(c => c.Name)
+                    .HasMaxLength(100)
+                    .IsRequired()
+                    .HasColumnType("VARCHAR(100)");
+
+                entity.Property(c => c.Phone)
+                    .HasMaxLength(20)
+                    .IsRequired()
+                    .HasColumnType("VARCHAR(20)");
+
+                entity.Property(c => c.Email)
+                    .HasMaxLength(100)
+                    .IsRequired()
+                    .HasColumnType("VARCHAR(100)");
+
+                entity.Property(c => c.Message)
+                    .IsRequired()
+                    .HasColumnType("TEXT");
+
+                entity.Property(c => c.SubmittedAt)
+                    .HasDefaultValueSql("NOW()")
+                    .HasColumnType("TIMESTAMP WITH TIME ZONE");
             });
         }
     }
