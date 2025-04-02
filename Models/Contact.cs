@@ -23,6 +23,6 @@ namespace sdt_backend.net.Models
         [Required(ErrorMessage = "Message is required")]
         public string Message { get; set; }
 
-        public DateTime SubmittedAt { get; set; } = DateTime.Now; // Changed from UtcNow
+        public DateTime SubmittedAt { get; set; } = DateTime.Now; 
     }
 }
