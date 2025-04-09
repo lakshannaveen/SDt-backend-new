@@ -3,4 +3,4 @@ click on sdt-backend.net.sln
 then run (click on visual studio green run button)
 make sure to put database to your local posgresql and change connection string 
 database backup one drive link (https://liveplymouthac-my.sharepoint.com/:u:/g/personal/10953391_students_plymouth_ac_uk/EfXS289SA2lNts8DBjNgSRwBWK0luePIk93glkeo3FXyoA?e=BSadYA)
-copy the link paste in your browser and download file and add your locla pg admin to this backup file.
+copy the link paste in your browser and download file and add your local pgadmin(posgresql) to this backup file.
